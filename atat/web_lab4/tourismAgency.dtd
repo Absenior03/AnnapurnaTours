@@ -1,0 +1,8 @@
+<!ELEMENT tourismAgency (agency+)>
+<!ELEMENT agency (name, location, yearEstablished, totalPackages, currency, rating)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+<!ELEMENT yearEstablished (#PCDATA)>
+<!ELEMENT totalPackages (#PCDATA)>
+<!ELEMENT currency (#PCDATA)>
+<!ELEMENT rating (#PCDATA)>
