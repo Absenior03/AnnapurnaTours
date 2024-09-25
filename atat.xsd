@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="website">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="head">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="title" type="xs:string"/>
+                            <xs:element name="meta">
+                                <xs:complexType>
+                                    <xs:attribute name="name" type="xs:string"/>
+                                    <xs:attribute name="content" type="xs:string"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="link" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="rel" type="xs:string" use="required"/>
+                                    <xs:attribute name="href" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="body">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="header">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="logo">
+                                            <xs:complexType>
+                                                <xs:attribute name="src" type="xs:string" use="required"/>
+                                                <xs:attribute name="width" type="xs:string"/>
+                                                <xs:attribute name="height" type="xs:string"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="menu">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="item" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="link" type="xs:string"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="main">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="section" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="h1" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="p" type="xs:string" minOccurs="0"/>
+                                                    <xs:element name="button">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="link" type="xs:string" use="required"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="location" maxOccurs="unbounded" minOccurs="0">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="img" type="xs:string" use="required"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="name" type="xs:string" use="required"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="footer">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="contact">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="map">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="src" type="xs:string" use="required"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
